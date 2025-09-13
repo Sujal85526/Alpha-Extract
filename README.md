@@ -79,7 +79,7 @@ The pipeline is optimized for parallel processing and handles documents of varyi
 
 3. Set up environment variables:
    ```bash
-   export GROQ_API_KEY=your_api_key_here
+   GROQ_API_KEY=your_api_key_here
    ```
 
 4. Run the application:
@@ -170,6 +170,6 @@ This project is licensed under the MIT License.
 
 ## Author
 
-Created with ❤️ by [**Rauhan Ahmed Siddiqui**](https://github.com/RauhanAhmed/AlphaExtract).
+Created with ❤️ by [**Sujal Singh Rajput**](https://github.com/Sujal85526/Alpha-Extract).
 
 For questions or support, please open an issue on the GitHub repository.
