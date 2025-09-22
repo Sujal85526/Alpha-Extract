@@ -1,4 +1,5 @@
 from ..utils.functions import getConfig, getYaml
+from ..utils.secrets import get_api_key
 from ..utils.logger import logger
 import litellm
 from dotenv import load_dotenv
@@ -24,7 +25,7 @@ class SummaryEngine:
             allSummaries = "\n".join(texts)
             completion = litellm.completion(
                 model = self.config.get("SUMMARIZER", "LLM"),
-                api_key = os.getenv("GROQ_API_KEY"),
+                api_key = get_api_key(),
                 api_base = self.config["GROQ CONFIG"]["BASEURL"],
                 messages = [
                     {"role": "system", "content": self.prompts["summaryEnginePrompt"]},

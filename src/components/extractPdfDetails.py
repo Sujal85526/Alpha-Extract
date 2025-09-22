@@ -1,4 +1,5 @@
 from ..utils.functions import getConfig, convertImageToBase64, getYaml
+from ..utils.secrets import get_api_key
 from pdf2image import convert_from_bytes
 from ..utils.logger import logger
 from dotenv import load_dotenv
@@ -16,7 +17,7 @@ class ExtractPdfDetails:
         self.prompts = getYaml(os.path.join(os.getcwd(), "prompts.yaml"))
         self.llmClient = OpenAI(
             base_url = self.config["GROQ CONFIG"]["BASEURL"],
-            api_key = os.getenv("GROQ_API_KEY")
+            api_key = get_api_key()
         )
 
     def convertToImages(self, pdfBytes: str) -> list[Image.Image]:
